@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css"  href="./style.css" />
+</head>
+<body>
+    <div class="top">
+        <div id="loseMessage" class="message">
+            You lose! 
+             <div>
+           <div class="enter-tip">Press Enter to Restart</div> 
+        </div>
+        </div>
+    </div>
+
+    <div class="field" id="field"></div>
+    <div class="mobile-controll">
+        <div id="mArrowTop" class="m-arrow">⬆</div>
+        <div id="mArrowTop" class="m-arrow">⬅</div>
+        <div id="mArrowTop" class="m-arrow">➡</div>
+        <div id="mArrowTop" class="m-arrow">⬇</div>
+    </div>
+    <footer> 
+        <div class="score">
+            <label class="eaten" >
+                Eaten: <span id="eatenSpan" class="value">0</span>
+            </label>
+            <label class="time" >
+                Time: <span id="timerSpan" class="value">0:00</span>
+            </label>
+            <label class="score" >
+                Score: <span id="scoreSpan" class="value">0000</span>
+            </label>
+            <label class="speed" >
+                Speed: <span id="speedSpan" class="value">x1</span>
+            </label>
+        </div> 
+        <div class="bottom">
+            <div class="info">
+                <span class="apple">  a</span>: <span class="plus">+1</span> |
+                <span class="orange"> o</span>: <span class="plus">+2</span>
+            </div>
+            <button class="restart" id="restart">Restart</button>
+        </div>
+    </footer>
+    <div class="alert">Please open site on desktop screen size. <br />There is no mobile adaptive</div>
+    <script src="/index.js"></script>
+</body>
+</html>
