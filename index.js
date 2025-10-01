@@ -1,5 +1,12 @@
 
+const hintCard = document.getElementById("hindCard");
 
+const defaultSpeed = 300; 
+const speedBooster = 10; 
+const speedLimit = 80; 
+
+const defMinFoodCount = 5;
+const defMaxFoodCount = 20; 
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -64,12 +71,7 @@ class Snake {
 }
 
 
-const defaultSpeed = 300; 
-const speedBooster = 50; 
-const speedLimit = 100; 
 
-const defMinFoodCount = 10;
-const defMaxFoodCount = 20; 
 
 const getMinutesFormat = (timer) => {
     const totalSeconds = Math.max(0, Math.ceil(timer / 1000));
@@ -108,31 +110,28 @@ class Game {
         document.addEventListener('keydown', (event) => {
             event.preventDefault();
             // console.log(1);
-            
+            hintCard.classList.remove("is-open"); 
+
             switch (event.code) {
                 case 'ArrowUp':
                     this.direction = {
                         x: 0,
                         y: -1
                     };
-                    // console.log('Move ArrowUp');
                     break;
                 case 'ArrowLeft':
-                    //   console.log('Move ArrowLeft');
                     this.direction = {
                         y: 0,
                         x: -1
                     };
                     break;
                 case 'ArrowDown':
-                    // console.log('Move ArrowDown');
                     this.direction = {
                         x: 0,
                         y: 1
                     };
                     break;
                 case 'ArrowRight':
-                    // console.log('Move ArrowRight');
                     this.direction = {
                         y: 0,
                         x: 1

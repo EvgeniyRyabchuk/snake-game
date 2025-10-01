@@ -8,6 +8,29 @@
     <link rel="stylesheet" type="text/css"  href="./style.css" />
 </head>
 <body>
+
+<div id="hindCard" class="tip-card swichable-flex is-open" role="region" aria-label="Controls tip">
+  <div class="hint">
+    <h3>How to control the game</h3>
+    <p>Use the arrow buttons (or your keyboard arrows) to move the snake. Watch the red glow — it highlights which direction to press next.</p>
+  </div>
+
+  <div class="pad" aria-hidden="false">
+    <div class="cell"></div>
+    <div class="cell"><button id="up" class="btn" aria-label="Up">↑</button></div>
+    <div class="cell"></div>
+
+    <div class="cell"><button id="left" class="btn" aria-label="Left">←</button></div>
+    <div class="cell center"></div>
+    <div class="cell"><button id="right" class="btn" aria-label="Right">→</button></div>
+
+    <div class="cell"></div>
+    <div class="cell"><button id="down" class="btn" aria-label="Down">↓</button></div>
+    <div class="cell"></div>
+  </div>
+</div>
+
+
     <div class="top">
         <div id="loseMessage" class="message">
             You lose! 
@@ -41,13 +64,14 @@
         </div> 
         <div class="bottom">
             <div class="info">
-                <span class="apple">  a</span>: <span class="plus">+1</span> |
-                <span class="orange"> o</span>: <span class="plus">+2</span>
+                <span class="apple">  a</span><sup class="plus">+1</sup> &nbsp;
+                <span class="orange"> o</span><sup class="plus">+2</sup>
             </div>
             <button class="restart" id="restart">Restart</button>
         </div>
     </footer>
     <div class="alert">Please open site on desktop screen size. <br />There is no mobile adaptive</div>
+    <script src="./hint.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
