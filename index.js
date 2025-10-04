@@ -1,3 +1,4 @@
+//TODO: can't eat if food in the adge 
 
 const hintCard = document.getElementById("hindCard");
 
@@ -85,6 +86,11 @@ const getSpeedFormat = (speed) => {
     return `x${speed.toFixed(2)}`
 }
 
+const btnPressTrigger = () => {
+    hintCard.classList.remove("is-open"); 
+    stopSequence();
+}
+
 class Game {
     field;
     snake;
@@ -110,8 +116,7 @@ class Game {
         document.addEventListener('keydown', (event) => {
             event.preventDefault();
             // console.log(1);
-            hintCard.classList.remove("is-open"); 
-
+            btnPressTrigger(); 
             switch (event.code) {
                 case 'ArrowUp':
                     this.direction = {
@@ -188,6 +193,15 @@ class Game {
                 part.x += this.direction.x;
                 part.y += this.direction.y; 
 
+                if(part.x >= this.size[1]) 
+                    part.x = 0;
+                if(part.x < 0) 
+                    part.x = this.size[1] - 1;
+
+                if(part.y >= this.size[0]) 
+                    part.y = 0; 
+                if(part.y < 0) 
+                    part.y = this.size[0] - 1; 
                 // console.log(`snake pos: ${part.x}, ${part.y}`);
                 // console.log(this.food.map(f => `food pos: ${f.x} | ${f.y}` ));
 
@@ -268,15 +282,7 @@ class Game {
                 tailIndex++;
             }
 
-            if(part.x >= this.size[1]) 
-                part.x = 0;
-            if(part.x < 0) 
-                part.x = this.size[1] - 1;
 
-            if(part.y >= this.size[0]) 
-                part.y = 0; 
-            if(part.y < 0) 
-                part.y = this.size[0] - 1; 
 
             this.field[part.y][part.x] = 
             `<span class="${part.className}">${part.content}</span>`;
