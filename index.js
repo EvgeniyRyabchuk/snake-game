@@ -1,6 +1,3 @@
-//TODO: can't eat if food in the adge 
-
-const hintCard = document.getElementById("hindCard");
 
 const defaultSpeed = 300; 
 const speedBooster = 10; 
